@@ -1,0 +1,161 @@
+   
+body.products{
+
+    background-image: url('/images/wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    }
+    body.products .box-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      
+    
+    }
+    
+    .products .box{
+       
+        display: flex;
+        flex-direction: column;
+    /*factor de crecimiento*/
+    width: 350px;
+       height: 380px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, .3);
+    
+    
+    margin: 20px;
+    }
+    .products .box .image{
+       
+       
+        padding: 10px;
+        background-color: var(--color-pink);
+        text-align:center;
+    }
+    
+    .products .box .image img{
+        height: 200px;
+        width: 280px;
+        object-fit: cover;
+        
+    }
+    
+    .products .box .info .title{
+        padding: 10px;
+        color: purple;
+        font-size: 20px;
+    }
+    .products .box .info .subInfo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /*separacion de estrellas y precio*/
+        padding:15px 10px ;
+        border-top: 1px solid rgba(0, 0, 0, .3);
+        /*linea gris sobre el precio*/
+        
+    }
+    .products .box .info .subInfo .price{
+        color: var( --color-pink);
+        font-size: 13px;
+    
+    }
+    .products .box .info .subInfo .price span{
+        font-size: 12px;
+        color: #999;
+        text-decoration: line-through;
+        /*precio tachado*/
+    
+    }
+    .products .box .info .subInfo .stars i{
+    color: rgb(255, 195, 82);
+    font-size: 12px;
+    
+    }
+    .products .box .overlay{
+        /* caja de iconos sobre las imagenes*/
+        position: absolute;
+        top: 0; left: 0;
+        height: 223px;
+        width: 100%;
+        background:rgba(0, 0, 0, .3);
+        /*opacidad*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: none;
+        transform: scale(0); 
+    }
+    
+    
+    
+    
+    @media(min-width:760px){
+    
+        body.products .box-container{
+            flex-direction: row;
+        }
+    
+        .products .box{
+          
+        /*factor de crecimiento*/
+       width: 350px;
+       height: 380px;
+       transition: 1s;
+       filter: drop-shadow(0 3px 4px rgba(0,0,0,.3));
+      
+        }
+        .products .box:hover{
+            /*se agranda la caja*/
+            transform: scale(1.2);
+        }
+       
+        .products .box .image img{
+            height: 200px;
+            width: 280px;
+            object-fit: cover;
+           
+        }
+    
+        .products .box:hover .overlay {
+            transform: scale(1); 
+            
+        } 
+        .products .box .overlay a{
+        
+        color: rgb(249, 224, 255);
+        background: #fff;
+        margin: 10px;
+        padding: 13px 15px;
+        font-size: 25px;
+        transform: translateY(-150px);
+        transition-property: transform;
+       transition: .6s;
+        /*esto relentiza la velocidad de transicion*/
+    }
+    .products .box .overlay a:hover{
+        /*color que adquieren los iconos al pasar el mouse*/
+        color: var( --color-pink);
+    }
+    .products .box:hover .overlay a{
+        transform: translateY(0px);
+    }
+    }
+    
+    @media(min-width:1200px){
+       .products .box{
+        width: 250px;
+        height: 300px;
+        }
+        
+        .products .box .image img{
+            height: 150px;
+            width: 180px;
+            object-fit: cover;
+           
+        }
+    }
