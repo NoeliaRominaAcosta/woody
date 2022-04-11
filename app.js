@@ -37,7 +37,25 @@ app.get('/passwordless', (req,res) => {
 app.get('/products', (req,res) => {
   return res.sendFile(path.resolve(__dirname, 'views', 'products.html'))
 });
-
+app.get('/', (req,res) => res.sendFile(path.resolve(__dirname, 'views', 'index.html')))
+app.get('/register', (req,res) => {
+  return res.sendFile(path.resolve(__dirname, 'views', 'register.html'))
+});
+app.get('/login', (req,res) => {
+  return res.sendFile(path.resolve(__dirname, 'views', 'login.html'))
+});
+app.get('/contact', (req,res) => {
+  return res.sendFile(path.resolve(__dirname, 'views', 'contact.html'))
+});
+app.get('/passwordless', (req,res) => {
+  return res.sendFile(path.resolve(__dirname, 'views', 'passwordless.html'))
+});
+app.get('/products', (req,res) => {
+  return res.sendFile(path.resolve(__dirname, 'views', 'products.html'))
+});
+app.get('/buy', (req,res) => {
+  return res.sendFile(path.resolve(__dirname, 'views', 'buy.html'))
+});
 
 
 // catch 404 and forward to error handler
