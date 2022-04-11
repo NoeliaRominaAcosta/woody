@@ -37,7 +37,9 @@ app.get('/passwordless', (req,res) => {
 app.get('/products', (req,res) => {
   return res.sendFile(path.resolve(__dirname, 'views', 'products.html'))
 });
-
+app.get('/buy', (req,res) => {
+  return res.sendFile(path.resolve(__dirname, 'views', 'buy.html'))
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
